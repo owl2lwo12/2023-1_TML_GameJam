@@ -7,7 +7,7 @@ public class NormalMovement : MonoBehaviour
     public float padakpadak = 4f;
     private Rigidbody2D rb;
     public float spd = 5f;
-
+    public int HP = 100;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
