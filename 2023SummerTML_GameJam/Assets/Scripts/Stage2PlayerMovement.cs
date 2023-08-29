@@ -27,7 +27,8 @@ public class Stage2PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Hazard")
         {
-            //gameover
+
+            Time.timeScale = 0;//gameover
         }
     }
 }
