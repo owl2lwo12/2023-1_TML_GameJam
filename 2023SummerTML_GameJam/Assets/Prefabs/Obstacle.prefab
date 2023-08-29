@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7446135593843555264}
   - component: {fileID: 7393690713890544526}
   - component: {fileID: 3204153650766491505}
+  - component: {fileID: 4106439018567431532}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Obstacle
@@ -122,7 +123,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539782132149269055}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -135,3 +136,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4106439018567431532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539782132149269055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9209eb6d740f8904284786fe187ad22e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 10

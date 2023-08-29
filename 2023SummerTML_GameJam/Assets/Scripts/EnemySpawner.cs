@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        interval = Random.Range(1, 5);
+        interval = Random.Range(2, 5);
     }
     private float timer = 0f;
     private void Update()
@@ -47,7 +47,7 @@ public class EnemySpawner : MonoBehaviour
     {
         Vector3 v = new Vector3(10 * t + player.position.x, player.position.y + pos, 0f);
         GameObject p = Instantiate(car, v, Quaternion.identity);
-        speed = Random.Range(2, 4);
+        speed = Random.Range(3.5f, 6.5f);
         Drive pp = p.GetComponent<Drive>();
         speed *= t;
         pp.MakeSetting(speed);
