@@ -8,6 +8,8 @@ public class NormalMovement : MonoBehaviour
     private Rigidbody2D rb;
     public float spd = 5f;
     public int HP = 100;
+    private bool isHit = false;
+    private float timer = 1f;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,9 +26,26 @@ public class NormalMovement : MonoBehaviour
         {
             Jump();
         }
+        if(collision.gameObject.tag == "Obstacle")
+        {
+            isHit = true;
+            Jump();
+        }
     }
     private void Update()
     {
+        if (isHit)
+        {
+            timer -= Time.deltaTime;
+
+        }
+        if(timer <= 0f)
+        {
+            isHit = true;
+            timer = 1f;
+        }
+
+
         if (Input.GetKey(KeyCode.W))
         {
             padakpadak = 10f;

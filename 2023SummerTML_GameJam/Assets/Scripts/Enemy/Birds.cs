@@ -36,7 +36,9 @@ public class Birds : MonoBehaviour
             {
                 NormalMovement nM = collision.gameObject.GetComponent<NormalMovement>();
                 nM.HP -= dmg;
+                //추가 상태이상
                 Destroy(gameObject);
+                
             }
             else if(isOnTheGround == true)
             {
