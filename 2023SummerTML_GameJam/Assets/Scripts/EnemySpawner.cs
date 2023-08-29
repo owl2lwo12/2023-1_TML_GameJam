@@ -45,7 +45,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy(float t)
     {
-        Vector3 v = new Vector3(5 * t + player.position.x, player.position.y + pos, 0f);
+        Vector3 v = new Vector3(10 * t + player.position.x, player.position.y + pos, 0f);
         GameObject p = Instantiate(car, v, Quaternion.identity);
         speed = Random.Range(2, 4);
         Drive pp = p.GetComponent<Drive>();
