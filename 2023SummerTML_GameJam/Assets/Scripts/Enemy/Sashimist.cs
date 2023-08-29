@@ -17,7 +17,7 @@ public class Sashimist : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            //GameOver
+            Time.timeScale = 0;//GameOver
         }
     }
 }

@@ -60,6 +60,13 @@ public class NormalMovement : MonoBehaviour
         {
             MoveTo(-1);
         }
+
+
+        if(HP <= 0f)
+        {
+            //gameover
+            Time.timeScale = 0;
+        }
     }
 
     private void MoveTo(int t)
