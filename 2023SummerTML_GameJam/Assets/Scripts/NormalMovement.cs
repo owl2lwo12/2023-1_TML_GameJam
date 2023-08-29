@@ -14,6 +14,10 @@ public class NormalMovement : MonoBehaviour
     public GameObject uipanel;
     private void Awake()
     {
+        if(Time.timeScale== 0)
+        {
+            Time.timeScale = 1;
+        }
         rb = GetComponent<Rigidbody2D>();
     }
     public void Jump()
