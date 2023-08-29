@@ -32,16 +32,21 @@ public class Birds : MonoBehaviour
         }
         if(collision.gameObject.tag == "Player")
         {
-            if(isOnTheGround == false)
+            NormalMovement nM = collision.gameObject.GetComponent<NormalMovement>();
+            if (isOnTheGround == false)
             {
-                NormalMovement nM = collision.gameObject.GetComponent<NormalMovement>();
-                nM.HP -= dmg;
-                //추가 상태이상
+                if (!nM.CanHit())
+                {
+                    nM.HP -= dmg;
+                    nM.Hit();
+                    //추가 상태이상
+                }
                 Destroy(gameObject);
                 
             }
             else if(isOnTheGround == true)
             {
+                nM.Jump();
                 //뭐 어떻게 어떻게 해서 어찌 저찌 하면 되지
             }
         }

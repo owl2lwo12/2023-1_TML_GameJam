@@ -9,12 +9,12 @@ public class NormalMovement : MonoBehaviour
     public float spd = 5f;
     public int HP = 100;
     private bool isHit = false;
-    private float timer = 1f;
+    public float timer = 1f;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    private void Jump()
+    public void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, padakpadak, 0);
         padakpadak = 4f;
@@ -41,7 +41,7 @@ public class NormalMovement : MonoBehaviour
         }
         if(timer <= 0f)
         {
-            isHit = true;
+            isHit = false;
             timer = 1f;
         }
 
@@ -65,5 +65,15 @@ public class NormalMovement : MonoBehaviour
     private void MoveTo(int t)
     {
         transform.Translate(Vector3.left * t * spd * Time.deltaTime);
+    }
+
+    public void Hit()
+    {
+        isHit = true;
+    }
+
+    public bool CanHit()
+    {
+        return isHit;
     }
 }

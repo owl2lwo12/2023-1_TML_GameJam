@@ -27,9 +27,13 @@ public class Cats : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             NormalMovement nM = collision.gameObject.GetComponent<NormalMovement>();
-            nM.HP -= dmg;
+            if (!nM.CanHit())
+            {
+                nM.HP -= dmg;
+                nM.Hit();
+                //추가 상태이상
+            }
             Destroy(gameObject);
-            //추가 상태이상
         }
     }
 }
