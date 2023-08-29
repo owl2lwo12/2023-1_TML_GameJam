@@ -9,6 +9,7 @@ TagManager:
   - Hazard
   - Wall
   - Water
+  - NextStage
   layers:
   - Default
   - TransparentFX

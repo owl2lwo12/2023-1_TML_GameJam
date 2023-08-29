@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sashimist : MonoBehaviour
 {
     public float speed = 3f;
-
+    public GameObject uipanel;
 
     private void Update()
     {
@@ -17,6 +17,7 @@ public class Sashimist : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            uipanel.SetActive(true);
             Time.timeScale = 0;//GameOver
         }
     }

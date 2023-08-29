@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class ButtonController : MonoBehaviour
+public class GoToTitle : MonoBehaviour
 {
-    public void StageStart()
+    public void GoTitle()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(3);
     }
 }

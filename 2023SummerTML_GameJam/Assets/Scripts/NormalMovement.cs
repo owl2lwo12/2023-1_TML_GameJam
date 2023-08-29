@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NormalMovement : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class NormalMovement : MonoBehaviour
     public int HP = 100;
     private bool isHit = false;
     public float timer = 1f;
+    public GameObject uipanel;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,6 +32,13 @@ public class NormalMovement : MonoBehaviour
         {
             isHit = true;
             Jump();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "NextStage")
+        {
+            SceneManager.LoadScene(1);
         }
     }
     private void Update()
@@ -65,6 +74,7 @@ public class NormalMovement : MonoBehaviour
         if(HP <= 0f)
         {
             //gameover
+            uipanel.SetActive(true);
             Time.timeScale = 0;
         }
     }
